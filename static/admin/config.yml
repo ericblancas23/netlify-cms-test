@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  repo: https://github.com/ericblancas23/netlify-cms-test
+  branch: master # Branch to update (optional; defaults to master)
+media_folder: ./img/gallery
+public_folder: /img
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'content/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', default: 'insert title' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime'}
+      - { label: 'Description', name: 'description', widget: 'string',
+          default: 'insert body' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
